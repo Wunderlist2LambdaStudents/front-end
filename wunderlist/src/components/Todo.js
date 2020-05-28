@@ -16,6 +16,11 @@ const StyledTodoItem = styled.div`
     .todo-info-container {
         display: flex;
         align-items: center;
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
     }
 `
 
@@ -26,10 +31,10 @@ function Todo(props){
         <StyledTodoItem>
             <div className="todo-info-container">
                 <Checkbox />
-                <p>{title}</p>
-                <p>&nbsp;- {body}</p>
+                <p className='title'>{title}</p>
+                <p className='body'>&nbsp;- {body}</p>
             </div>
-            <p>{due_date}</p>
+            <p className='date'>{due_date}</p>
         </StyledTodoItem>
     )
 }

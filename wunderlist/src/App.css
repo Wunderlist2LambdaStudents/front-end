@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -51,4 +53,17 @@ table {
 
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+	/* Block */
+	margin-top: 2%;
+	padding: 12px 20px;
+	/* Border */
+	border: 2px solid #0E7C7B;
+	border-radius: 4px;
+	/* Styling */
+	background-color: #FFFFFF;
+	font-size: 1rem;
 }

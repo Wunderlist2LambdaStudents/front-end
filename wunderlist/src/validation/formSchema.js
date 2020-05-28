@@ -1,6 +1,16 @@
 import * as yup from 'yup'
 
-const formSchema = yup.object().shape({
+const addTodoFormSchema = yup.object().shape({
+    title: yup
+        .string()
+        .required('Todo input required'),
+    body: yup
+        .string(),
+    due_date: yup.date(),
+    recurring: yup.string()
+})
+
+const contactFormSchema = yup.object().shape({
     name: yup
         .string()
         .min(3, 'Name must be at least 3 characters')
@@ -12,4 +22,4 @@ const formSchema = yup.object().shape({
     body: yup.string()
 })
 
-export default formSchema
+export { addTodoFormSchema, contactFormSchema }

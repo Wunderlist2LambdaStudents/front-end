@@ -5,7 +5,7 @@ const StyledLabel = styled.label`
     display: block;
     position: relative;
     padding-left: 35px;
-    padding-bottom: 20px;
+    padding-bottom: 23px;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -71,7 +71,7 @@ function Checkbox(props){
     return(
         <StyledLabel>
             <input type="checkbox" />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
         </StyledLabel>
     )
 }

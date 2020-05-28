@@ -12,7 +12,8 @@ const StyledTodoPage = styled.div`
 `
 
 function TodoPage(props){
-    const {todoList} = props
+    const todoList = props.todoList
+    const toggleModal = props.toggleModal
 
     return(
         <StyledTodoPage>
@@ -23,6 +24,7 @@ function TodoPage(props){
                         return <Todo key={item.uuid} todo={item}/>
                     })
                 }
+                <button onClick={toggleModal}>Add Todo</button>
             </div>
         </StyledTodoPage>
     )
