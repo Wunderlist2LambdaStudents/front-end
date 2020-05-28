@@ -8,7 +8,7 @@ import logo from '../logo-white-fullres.png';
 const StyledNav = styled.nav`
     width: 20%;
     height: 100vh;
-    background-color: #D8C385;
+    background-color: #0E7C7B;
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -24,10 +24,10 @@ const StyledNav = styled.nav`
         text-decoration: none;
         font-size: 1.7rem;
         font-weight: 900;
-        color: #8E8D8A;
+        color: #FFFFFF;
         transition: 0.5s;
         &:hover{
-            color: #E85A4F;
+            color: #94909B;
         }
     }
 

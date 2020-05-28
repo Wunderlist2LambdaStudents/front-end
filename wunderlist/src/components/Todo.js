@@ -1,8 +1,36 @@
 import React from 'react';
+import styled from 'styled-components'
 
+// Components
+import Checkbox from './reuse/Checkbox'
+
+const StyledTodoItem = styled.div`
+    /* Block */
+    padding: 4%;
+    border-bottom: 1px solid black;
+    /* Flex */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .todo-info-container {
+        display: flex;
+        align-items: center;
+    }
+`
+
+// Todo: Add checkbox
 function Todo(props){
+    const { uuid, title, body, due_date, recurring } = props.todo
     return(
-        <div>I am a todo item!</div>
+        <StyledTodoItem>
+            <div className="todo-info-container">
+                <Checkbox />
+                <p>{title}</p>
+                <p>&nbsp;- {body}</p>
+            </div>
+            <p>{due_date}</p>
+        </StyledTodoItem>
     )
 }
 

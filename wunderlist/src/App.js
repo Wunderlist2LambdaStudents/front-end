@@ -16,12 +16,33 @@ import Contact from './components/Contact'
 import './App.css';
 
 const StyledApp = styled.div`
-  background-color:#EAE7DC;
+  h2 {
+    font-size: 2rem;
+  }
   .content {
-    background-color:#EAE7DC;
-    margin-left:23%;
+    margin-left:20%;
   }
 `
+
+// Item list init
+const initTodos = [
+  {
+    uuid: 1,
+    title: 'Say Hello',
+    body: 'Say hello to the world',
+    due_date: 'Tomorrow',
+    recurring: 'Weekly'
+  },
+  {
+    uuid: 2,
+    title: 'Say Hello Again',
+    body: 'Say hello to the world',
+    due_date: 'The next day',
+    recurring: 'Weekly'
+  }
+]
+
+// Contact Form Init
 const initialContactValues = {
   name: '',
   email: '',
@@ -34,7 +55,8 @@ const initialContactErrors = {
 }
 
 function App() {
-  const [todoList, setTodoList] = useState([])
+  // Item list state
+  const [todoList, setTodoList] = useState(initTodos)
   // Contact form state
   const [contacts, setContact] = useState([])
   const [contactFormValues, setContactFormValues] = useState(initialContactValues)
@@ -96,7 +118,8 @@ function App() {
 
   return (
     <div className="App">
-      <StyledApp>
+      {/* Styled Components Container */}
+      <StyledApp> 
         <Nav />
         <div className="content">
           <Route exact path='/'>
