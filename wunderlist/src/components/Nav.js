@@ -49,6 +49,9 @@ function Nav(props) {
             <Link to='/contact'>
                 <div>Contact</div>
             </Link>
+            <Link to='/characters'>
+                <div>Characters</div>
+            </Link>
         </StyledNav>
     )
 }

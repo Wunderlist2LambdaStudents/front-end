@@ -13,6 +13,7 @@ import Dashboard from './components/Dashboard'
 import TodoPage from './components/TodoPage'
 import Contact from './components/Contact'
 import ModalAddTodo from './components/reuse/ModalAddTodo'
+import RubricItem from './components/RubricItem'
 
 // Assets
 import './App.css';
@@ -27,9 +28,6 @@ const StyledApp = styled.div`
     margin-left:20%;
   }
 `
-
-// User test
-const testUser = {username: 'testUser', password: 'password1234'}
 
 // Item list init
 const initTodos = [
@@ -93,9 +91,20 @@ function App() {
   const [contactFormValues, setContactFormValues] = useState(initialContactValues)
   const [contactErrors, setContactErrors] = useState(initialContactErrors)
   const [contactDisabled, setContactDisabled] = useState(true)
-  
+
+  // Arbitrary GET request for rubric item
+  const [characters, setCharacters] = useState([])
   // Axios
-  
+  useEffect(() => {
+    axios.get('https://rickandmortyapi.com/api/character/')
+    .then(response => {
+      setCharacters(response.data.results)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }, [])
+  console.log(characters)
 
   // Event Helpers
   const toggleModal = evt => {
@@ -229,6 +238,9 @@ function App() {
               contactDisabled={contactDisabled}
               contactErrors={contactErrors}
             />
+          </Route>
+          <Route exact path='/characters'>
+            <RubricItem characters={characters} />
           </Route>
         </div>
         <ModalAddTodo  
